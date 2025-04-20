@@ -1,8 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from conftest import driver_start
-from curl import *
 from data import User
 from locators import Locators
 
@@ -16,7 +14,6 @@ class TestLoginPageChrome:
         driver.find_element(*Locators.BUT_LOGIN).click()
         assert (WebDriverWait(driver, 3).
          until(EC.visibility_of_element_located(Locators.GET_ORDER))).text == 'Оформить заказ'
-        driver.quit()
 
     def test_login_page_from_account_button(self, driver_start):
         driver = driver_start
@@ -26,7 +23,6 @@ class TestLoginPageChrome:
         driver.find_element(*Locators.BUT_LOGIN).click()
         assert (WebDriverWait(driver, 3).
                 until(EC.visibility_of_element_located(Locators.GET_ORDER))).text == 'Оформить заказ'
-        driver.quit()
 
     def test_login_page_from_registration_page(self, driver_start):
         driver = driver_start
@@ -38,7 +34,6 @@ class TestLoginPageChrome:
         driver.find_element(*Locators.BUT_LOGIN).click()
         assert (WebDriverWait(driver, 3).
                 until(EC.visibility_of_element_located(Locators.GET_ORDER))).text == 'Оформить заказ'
-        driver.quit()
 
     def test_login_page_from_forgot_password_page(self, driver_start):
         driver = driver_start
@@ -50,4 +45,3 @@ class TestLoginPageChrome:
         driver.find_element(*Locators.BUT_LOGIN).click()
         assert (WebDriverWait(driver, 3).
                 until(EC.visibility_of_element_located(Locators.GET_ORDER))).text == 'Оформить заказ'
-        driver.quit()

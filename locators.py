@@ -30,15 +30,21 @@ class Locators:
 
     # форма входа
     TEXT_LOGIN = (By.XPATH, "//h2[.='Вход']")
-    EMAIL_LOGIN_INPUT = (By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[1]/div/div/input')
-    PASSWORD_LOGIN_INPUT = (By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[2]/div/div/input')
-    BUT_LOGIN = (By.XPATH, '//*[@id="root"]/div/main/div/form/button')
+    EMAIL_LOGIN_INPUT = (By.XPATH, './/input[@name="name"]'
+                                   '[@type="text"]')
+    PASSWORD_LOGIN_INPUT = (By.XPATH, './/input[@name="Пароль"]'
+                                   '[@type="password"]')
+    BUT_LOGIN = (By.XPATH, './/button[@class="button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_medium__3zxIa"]'
+                           '[text()="Войти"]')
 
     # форма регистрации
     TEXT_REG = (By.XPATH, "//h2[.='Регистрация']")
-    NAME_REG_INPUT = (By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[1]/div/div/input')
-    EMAIL_REG_INPUT = (By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[2]/div/div/input')
-    PASSWORD_REG_INPUT = (By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[3]/div/div/input')
+    NAME_REG_INPUT = (By.XPATH,
+                      './/label[text()="Имя"]/following-sibling::input')
+    EMAIL_REG_INPUT = (By.XPATH,
+                      './/label[text()="Email"]/following-sibling::input')
+    PASSWORD_REG_INPUT = (By.XPATH,
+                          './/label[text()="Пароль"]/following-sibling::input')
     BUT_REG_FORM = (By.XPATH,
                     './/button[@class="button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_medium__3zxIa"]'
                     '[text()="Зарегистрироваться"]')
@@ -46,8 +52,9 @@ class Locators:
                                 '[text()="Некорректный пароль"]')
 
     # конструктор
-    BUNS_SECTION = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[1]')
-    SAUCES_SECTION = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[2]')
-    TOPPINGS_SECTION = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[3]')
+    BUNS_SECTION = (By.XPATH, './/span[@class="text text_type_main-default"][text()="Булки"]')
+    SAUCES_SECTION = (By.XPATH, './/span[@class="text text_type_main-default"][text()="Соусы"]')
+    TOPPINGS_SECTION = (By.XPATH, './/span[@class="text text_type_main-default"][text()="Начинки"]')
+    FIRST_SAUCE_ELEMENT = (By.LINK_TEXT, 'Соус Spicy-X')
 
 

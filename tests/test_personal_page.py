@@ -1,7 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from conftest import driver_start
 from curl import *
 from data import User
 from locators import Locators
@@ -17,4 +16,3 @@ class TestPersonalPageChrome:
         (WebDriverWait(driver, 3).
          until(EC.element_to_be_clickable(Locators.BUT_PERSONAL_ACC)).click())
         assert driver.current_url == personal_page
-        driver.quit()
